@@ -1,4 +1,4 @@
-package com.codeboxx.Rocket_Elevators_Java_Api.Repository;
+package com.codeboxx.Rocket_Elevators_Java_Api.Repositories;
 
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Building;
 import org.springframework.data.jpa.repository.JpaRepository;

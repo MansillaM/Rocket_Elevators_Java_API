@@ -2,29 +2,30 @@ package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
-import com.codeboxx.Rocket_Elevators_Java_Api.Models.Column;
-import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.ColumnRepository;
-import org.springframework.web.bind.annotation.PathVariable;
+import com.codeboxx.Rocket_Elevators_Java_Api.Models.Customer;
+import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.CustomerRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ColumnController {
+public class CustomerController {
 
-    private final ColumnRepository repository;
-    ColumnController(ColumnRepository repository) {
+    private final CustomerRepository repository;
+    CustomerController(CustomerRepository repository) {
         this.repository = repository;
     }
 
-    @GetMapping("/columns")
-    List<Column> all() {
+    @GetMapping("/customers")
+    List<Customer> all() {
         return repository.findAll();
     }
 
-    @GetMapping("/columns/{id}")
-    Column one(@PathVariable int id) {
+    @GetMapping("/customers/{id}")
+    Customer one(@PathVariable int id) {
 
         return repository.findById(id)
                 .orElseThrow(() -> new FileSystemNotFoundException());
     }
+
 }

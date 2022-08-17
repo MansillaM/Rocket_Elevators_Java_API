@@ -3,7 +3,7 @@ package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Building;
-import com.codeboxx.Rocket_Elevators_Java_Api.Repository.BuildingRepository;
+import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.BuildingRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

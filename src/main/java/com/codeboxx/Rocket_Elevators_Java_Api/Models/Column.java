@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "columns")
-
 public class Column {
 
     @Id
