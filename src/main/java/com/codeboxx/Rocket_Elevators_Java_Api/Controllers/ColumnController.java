@@ -1,4 +1,4 @@
-package com.codeboxx.Rocket_Elevators_Java_Api.Controller;
+package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
 import java.util.List;

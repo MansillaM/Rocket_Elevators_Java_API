@@ -1,4 +1,4 @@
-package com.codeboxx.Rocket_Elevators_Java_Api.Controller;
+package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
@@ -16,12 +16,12 @@ public class BatteryController {
         this.repository = repository;
     }
 
-    @GetMapping("/battery")
+    @GetMapping("/batteries")
     List<Battery> all() {
         return repository.findAll();
     }
 
-    @GetMapping("/battery/{id}")
+    @GetMapping("/batteries/{id}")
     Battery one(@PathVariable int id) {
 
         return repository.findById(id)
