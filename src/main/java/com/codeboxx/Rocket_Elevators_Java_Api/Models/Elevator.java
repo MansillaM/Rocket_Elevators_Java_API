@@ -1,8 +1,20 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Models;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDate; //import LocalDate class
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name = "elevators")
 public class Elevator {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; //private = restricted access
     private String serial_number; //private = restricted access
     private String model; //private = restricted access
