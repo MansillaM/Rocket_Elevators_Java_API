@@ -25,6 +25,6 @@ public class ColumnController {
     Column one(@PathVariable int id) {
 
         return repository.findById(id)
-                .orElseThrow(() -> new FileSystemNotFoundException());
+                .orElseThrow(FileSystemNotFoundException::new);
     }
 }

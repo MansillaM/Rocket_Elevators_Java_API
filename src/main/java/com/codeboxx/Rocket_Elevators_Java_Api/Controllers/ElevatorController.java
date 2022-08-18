@@ -25,7 +25,7 @@ public class ElevatorController {
     Elevator one(@PathVariable int id) {
 
         return repository.findById(id)
-                .orElseThrow(() -> new FileSystemNotFoundException());
+                .orElseThrow(FileSystemNotFoundException::new);
     }
 
 }
