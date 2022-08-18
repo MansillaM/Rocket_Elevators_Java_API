@@ -5,9 +5,10 @@ import com.codeboxx.Rocket_Elevators_Java_Api.Models.User;
 import com.codeboxx.Rocket_Elevators_Java_Api.Services.UserService;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserController{
 
     private final UserService userService;
 
@@ -26,4 +27,5 @@ public class UserController {
 
         return userService.userById(id);
     }
+
 }

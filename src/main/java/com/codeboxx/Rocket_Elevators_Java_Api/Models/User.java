@@ -1,23 +1,69 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDateTime; //import LocalDateTime class
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @Table(name = "users")
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; //private = restricted access
-    private String email; //private = restricted access
-    private LocalDateTime created_at; //private = restricted access
-    private LocalDateTime updated_at; //private = restricted access
+    private int id;
+    @JsonIgnore
+    private String email;
+    @JsonIgnore
+    private String encryptedPassword;
 
+    @JsonIgnore
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @JsonIgnore
+    @Override
+    public String getPassword() {
+        return encryptedPassword;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @JsonIgnore
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @JsonIgnore
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @JsonIgnore
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @JsonIgnore
+    @Override
+    public boolean isEnabled() {
+        return true;
+
+
+    }
 }
