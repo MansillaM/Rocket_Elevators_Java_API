@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/elevator")
+@RequestMapping("/elevators")
 public class ElevatorController {
 
     private final ElevatorService elevatorService;
@@ -24,10 +24,10 @@ public class ElevatorController {
         return elevatorService.allElevators();
     }
 
-    @GetMapping("id/{id}")
-    public Elevator getById(@PathVariable int id) {
+    @GetMapping("/{id}")
+    public Elevator getByElevatorId(@PathVariable int id) {
 
-        return (Elevator) elevatorService.elevatorById(id);
+        return elevatorService.elevatorById(id);
     }
 
 }

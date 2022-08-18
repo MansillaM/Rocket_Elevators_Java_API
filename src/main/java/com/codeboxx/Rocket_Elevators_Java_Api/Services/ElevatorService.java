@@ -18,7 +18,7 @@ public class ElevatorService {
         this.elevatorRepository = elevatorRepository;
     }
 
-    public List<Elevator> allElevators(){
+    public List<Elevator> allElevators() {
 
         return elevatorRepository.findAll();
     }

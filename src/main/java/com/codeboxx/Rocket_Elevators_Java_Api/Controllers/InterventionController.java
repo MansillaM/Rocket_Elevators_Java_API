@@ -22,7 +22,7 @@ public class InterventionController {
     }
 
     @GetMapping("/{id}")
-    public Intervention getById(@PathVariable int id) {
+    public Intervention getByInterventionId(@PathVariable int id) {
 
         return interventionService.interventionById(id);
     }
