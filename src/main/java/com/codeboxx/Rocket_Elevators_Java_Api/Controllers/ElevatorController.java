@@ -14,7 +14,7 @@ public class ElevatorController {
 
     private final ElevatorService elevatorService;
 
-    ElevatorController(ElevatorService elevatorService) {
+    public ElevatorController(ElevatorService elevatorService) {
         this.elevatorService = elevatorService;
     }
 

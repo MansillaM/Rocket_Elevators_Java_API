@@ -3,28 +3,30 @@ package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Building;
-import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.BuildingRepository;
+import com.codeboxx.Rocket_Elevators_Java_Api.Services.BuildingService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/buildings")
 public class BuildingController {
 
-    private final BuildingRepository repository;
-    BuildingController(BuildingRepository repository) {
-        this.repository = repository;
+    private final BuildingService buildingService;
+
+    public BuildingController(BuildingService buildingService) {
+        this.buildingService = buildingService;
     }
 
-    @GetMapping("/buildings")
-    List<Building> all() {
-        return repository.findAll();
+    @GetMapping("/all")
+    public List<Building> getAllBuildings() {
+
+        return buildingService.allBuildings();
     }
+    @GetMapping("/{id}")
+    public Building getByBuildingId(@PathVariable int id) {
 
-    @GetMapping("/buildings/{id}")
-    Building one(@PathVariable int id) {
-
-        return repository.findById(id)
-                .orElseThrow(FileSystemNotFoundException::new);
+        return buildingService.buildingById(id);
     }
 }
