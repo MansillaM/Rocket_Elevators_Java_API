@@ -1,31 +1,33 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
-import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Elevator;
-import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.ElevatorRepository;
+import com.codeboxx.Rocket_Elevators_Java_Api.Services.ElevatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/elevator")
 public class ElevatorController {
 
-    private final ElevatorRepository repository;
-    ElevatorController(ElevatorRepository repository) {
-        this.repository = repository;
+    private final ElevatorService elevatorService;
+
+    ElevatorController(ElevatorService elevatorService) {
+        this.elevatorService = elevatorService;
     }
 
-    @GetMapping("/elevators")
-    List<Elevator> all() {
-        return repository.findAll();
+    @GetMapping("/all")
+    public List<Elevator> getAllElevators() {
+
+        return elevatorService.allElevators();
     }
 
-    @GetMapping("elevators/{id}")
-    Elevator one(@PathVariable int id) {
+    @GetMapping("id/{id}")
+    public Elevator getById(@PathVariable int id) {
 
-        return repository.findById(id)
-                .orElseThrow(FileSystemNotFoundException::new);
+        return (Elevator) elevatorService.elevatorById(id);
     }
 
 }
