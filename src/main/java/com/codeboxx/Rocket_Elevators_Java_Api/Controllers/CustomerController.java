@@ -1,6 +1,7 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
+import java.security.Principal;
 import java.util.List;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Customer;
 import com.codeboxx.Rocket_Elevators_Java_Api.Services.CustomerService;
@@ -34,4 +35,8 @@ public class CustomerController {
         customerService.createCustomer(newCustomer);
     }
 
+    @GetMapping("/current")
+    public String currentUserName(Principal principal) {
+        return principal.getName();
+    }
 }

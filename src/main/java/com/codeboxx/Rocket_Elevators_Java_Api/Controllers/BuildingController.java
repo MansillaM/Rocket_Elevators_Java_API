@@ -1,6 +1,7 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
+import java.security.Principal;
 import java.util.List;
 
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Battery;
@@ -36,5 +37,10 @@ public class BuildingController {
     public List<Battery> getAllBatteryOfId(@PathVariable int id) {
 
         return buildingService.allFromBatteryId(id);
+    }
+
+    @GetMapping("/current")
+    public String currentUserName(Principal principal) {
+        return principal.getName();
     }
 }
