@@ -35,16 +35,8 @@ public class ColumnController {
     }
 
     @GetMapping("/{id}/elevators")
-    public List<Column> getElevatorsFromColumn(@PathVariable int id) {
-        List<Column> allColumnsList = new ArrayList<>();
+    public List<Elevator> getAllElevatorOfId(@PathVariable int id) {
 
-//        for (Column column:getAllColumns()) {
-//            if (column.get) {
-//
-//            }
-//        }
-
-
-        return
+        return columnService.allFromColumnId(id);
     }
 }

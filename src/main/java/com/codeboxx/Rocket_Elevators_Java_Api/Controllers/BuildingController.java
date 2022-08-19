@@ -2,6 +2,8 @@ package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
+
+import com.codeboxx.Rocket_Elevators_Java_Api.Models.Battery;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Building;
 import com.codeboxx.Rocket_Elevators_Java_Api.Services.BuildingService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,5 +30,11 @@ public class BuildingController {
     public Building getByBuildingId(@PathVariable int id) {
 
         return buildingService.buildingById(id);
+    }
+
+    @GetMapping("/{id}/batteries")
+    public List<Battery> getAllBatteryOfId(@PathVariable int id) {
+
+        return buildingService.allFromBatteryId(id);
     }
 }

@@ -1,4 +1,5 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Services;
+import com.codeboxx.Rocket_Elevators_Java_Api.Models.Battery;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Building;
 import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.BuildingRepository;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,9 @@ public class BuildingService {
     public Building buildingById(int id) {
 
         return buildingRepository.findById(id).get();
+    }
+
+    public List<Battery> allFromBatteryId(int id) {
+        return buildingRepository.findByBatteryId(id);
     }
 }

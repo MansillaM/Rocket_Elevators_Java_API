@@ -1,5 +1,6 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Services;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Battery;
+import com.codeboxx.Rocket_Elevators_Java_Api.Models.Column;
 import com.codeboxx.Rocket_Elevators_Java_Api.Repositories.BatteryRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -23,6 +24,10 @@ public class BatteryService {
     public Battery batteryById(int id) {
 
         return batteryRepository.findById(id).get();
+    }
+
+    public List<Column> allFromBatteryId(int id) {
+        return batteryRepository.findByBatteryId(id);
     }
 
 }

@@ -17,6 +17,8 @@ public class Column {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; //private = restricted access
+    @JsonIgnore
+    private int battery_id;//private  = restricted access
     private int floors; //private = restricted access
     private String status; //private = restricted access
     private String information; //private = restricted access
