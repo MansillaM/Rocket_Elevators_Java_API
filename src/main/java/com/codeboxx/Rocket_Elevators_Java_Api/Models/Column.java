@@ -1,5 +1,6 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

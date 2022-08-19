@@ -22,7 +22,7 @@ public class User implements UserDetails {
     @JsonIgnore
     private String email;
     @JsonIgnore
-    private String encryptedPassword;
+    private String encrypted_password;
 
     @JsonIgnore
     @Override
@@ -33,7 +33,7 @@ public class User implements UserDetails {
     @JsonIgnore
     @Override
     public String getPassword() {
-        return encryptedPassword;
+        return encrypted_password;
     }
 
     @Override

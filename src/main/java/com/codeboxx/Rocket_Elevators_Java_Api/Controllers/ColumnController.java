@@ -1,6 +1,7 @@
 package com.codeboxx.Rocket_Elevators_Java_Api.Controllers;
 
 import java.nio.file.FileSystemNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Column;
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.Elevator;
@@ -22,14 +23,28 @@ public class ColumnController {
     }
 
     @GetMapping("/all")
-    public List<Column> getAllColmuns() {
+    public List<Column> getAllColumns() {
 
         return columnService.allColumns();
     }
 
-    @GetMapping("/id}")
+    @GetMapping("/{id}")
     public Column getByColumnId(@PathVariable int id) {
 
         return columnService.columnById(id);
+    }
+
+    @GetMapping("/{id}/elevators")
+    public List<Column> getElevatorsFromColumn(@PathVariable int id) {
+        List<Column> allColumnsList = new ArrayList<>();
+
+//        for (Column column:getAllColumns()) {
+//            if (column.get) {
+//
+//            }
+//        }
+
+
+        return
     }
 }

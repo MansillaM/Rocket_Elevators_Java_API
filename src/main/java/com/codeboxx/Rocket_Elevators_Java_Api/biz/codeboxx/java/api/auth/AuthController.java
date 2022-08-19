@@ -1,6 +1,7 @@
-package biz.codeboxx.java.api.auth;
+package com.codeboxx.Rocket_Elevators_Java_Api.biz.codeboxx.java.api.auth;
 
 import com.codeboxx.Rocket_Elevators_Java_Api.Models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,15 +19,11 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 public class AuthController {
 
-    final
+    @Autowired
     AuthenticationManager authManager;
-    final
-    JwtUtil jwtUtil;
 
-    public AuthController(AuthenticationManager authManager, JwtUtil jwtUtil) {
-        this.authManager = authManager;
-        this.jwtUtil = jwtUtil;
-    }
+    @Autowired
+    JwtUtil jwtUtil;
 
     @PostMapping("/auth")
     public ResponseEntity<?> authenticate(@RequestBody @Valid AuthRequest request) {

@@ -1,4 +1,4 @@
-package biz.codeboxx.java.api.auth;
+package com.codeboxx.Rocket_Elevators_Java_Api.biz.codeboxx.java.api.auth;
 
 import lombok.Getter;
 import lombok.Setter;
