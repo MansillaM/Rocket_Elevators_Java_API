@@ -22,18 +22,21 @@ public class ColumnController {
         this.columnService = columnService;
     }
 
+    //for GET method
     @GetMapping("/all")
     public List<Column> getAllColumns() {
 
         return columnService.allColumns();
     }
 
+    //for GET method
     @GetMapping("/{id}")
     public Column getByColumnId(@PathVariable int id) {
 
         return columnService.columnById(id);
     }
 
+    //for GET method
     @GetMapping("/{id}/elevators")
     public List<Elevator> getAllElevatorOfId(@PathVariable int id) {
 

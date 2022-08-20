@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface BatteryRepository extends JpaRepository<Battery, Integer> {
 
+    //Sql query for getting current user info
     @Query(("SELECT column FROM Column column WHERE column.battery_id = :id"))
     List<Column> findByBatteryId(int id);
 }

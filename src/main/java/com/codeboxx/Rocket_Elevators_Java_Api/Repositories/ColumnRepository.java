@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface ColumnRepository extends JpaRepository<Column, Integer> {
 
+    //Sql query for getting current user info
     @Query(("SELECT elev FROM Elevator elev WHERE elev.column_id = :id"))
     List<Elevator> findByColumnId(int id);
 }

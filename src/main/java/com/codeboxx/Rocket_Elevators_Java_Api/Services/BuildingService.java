@@ -18,16 +18,19 @@ public class BuildingService {
         this.buildingRepository = buildingRepository;
     }
 
+    //for GET method
     public List<Building> allBuildings() {
 
         return buildingRepository.findAll();
     }
 
+    //for GET method
     public Building buildingById(int id) {
 
         return buildingRepository.findById(id).get();
     }
 
+    //for GET method
     public List<Battery> allFromBatteryId(int id) {
         return buildingRepository.findByBatteryId(id);
     }

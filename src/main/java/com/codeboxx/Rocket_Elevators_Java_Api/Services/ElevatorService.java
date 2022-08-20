@@ -18,11 +18,13 @@ public class ElevatorService {
         this.elevatorRepository = elevatorRepository;
     }
 
+    //for GET method
     public List<Elevator> allElevators() {
 
         return elevatorRepository.findAll();
     }
 
+    //for GET method
     public Elevator elevatorById(int id){
         return elevatorRepository.findById(id).get();
     }

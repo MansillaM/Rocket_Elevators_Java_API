@@ -59,6 +59,14 @@ public class ApplicationSecurity {
         // This will be changed later to restrict access.
         http.authorizeRequests()
                 .antMatchers("/api/auth").permitAll()
+                .antMatchers("/swagger-ui/index.html").permitAll()
+                .antMatchers("/swagger-ui/favicon-32x32.png?v=3.0.0").permitAll()
+                .antMatchers("/swagger-ui/springfox.js?v=3.0.0").permitAll()
+                .antMatchers("/swagger-ui-standalone-preset.js?v=3.0.0").permitAll()
+                .antMatchers("/swagger-ui/swagger-ui-bundle.js?v=3.0.0").permitAll()
+                .antMatchers("/swagger-ui/favicon-16x16.png?v=3.0.0").permitAll()
+                .antMatchers("/swagger-ui/swagger-ui.css?v=3.0.0").permitAll()
+                .antMatchers("/swagger-ui/springfox.css?v=3.0.0").permitAll()
                 .anyRequest().authenticated();
         http.exceptionHandling()
                 .authenticationEntryPoint(

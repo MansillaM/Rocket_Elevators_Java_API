@@ -16,12 +16,14 @@ public class UserController{
         this.userService = userService;
     }
 
+    //for GET method
     @GetMapping("/all")
     public List<User> getAllUsers() {
 
         return userService.allUsers();
     }
 
+    //for GET method
     @GetMapping("/{id}")
     public User getByUserId(@PathVariable int id) {
 

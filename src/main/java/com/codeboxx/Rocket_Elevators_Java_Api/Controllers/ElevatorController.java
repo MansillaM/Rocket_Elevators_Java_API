@@ -18,12 +18,14 @@ public class ElevatorController {
         this.elevatorService = elevatorService;
     }
 
+    //for GET method
     @GetMapping("/all")
     public List<Elevator> getAllElevators() {
 
         return elevatorService.allElevators();
     }
 
+    //for GET method
     @GetMapping("/{id}")
     public Elevator getByElevatorId(@PathVariable int id) {
 

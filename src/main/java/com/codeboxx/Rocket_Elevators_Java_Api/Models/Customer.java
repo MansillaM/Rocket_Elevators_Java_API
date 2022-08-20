@@ -17,6 +17,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; //private = restricted access
+    private int user_id;
     private LocalDate creation_date; //private = restricted access
     private String company_name; //private = restricted access
     private String name; //private = restricted access

@@ -16,16 +16,19 @@ public class BatteryService {
         this.batteryRepository = batteryRepository;
     }
 
+    //for GET method
     public List<Battery> allBatteries() {
 
         return batteryRepository.findAll();
     }
 
+    //for GET method
     public Battery batteryById(int id) {
 
         return batteryRepository.findById(id).get();
     }
 
+    //for GET method
     public List<Column> allFromBatteryId(int id) {
         return batteryRepository.findByBatteryId(id);
     }

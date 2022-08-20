@@ -21,16 +21,19 @@ public class ColumnService {
         this.columnRepository = columnRepository;
     }
 
+    //for GET method
     public List<Column> allColumns() {
 
         return columnRepository.findAll();
     }
 
+    //for GET method
     public Column columnById(int id) {
 
         return columnRepository.findById(id).get();
     }
 
+    //for GET method
     public List<Elevator> allFromColumnId(int id) {
         return columnRepository.findByColumnId(id);
     }

@@ -21,17 +21,21 @@ public class BatteryController {
         this.batteryService = batteryService;
     }
 
+    //for GET method
     @GetMapping("/all")
     public List<Battery> getAllBatteries() {
 
         return batteryService.allBatteries();
     }
+
+    //for GET method
     @GetMapping("/{id}")
     public Battery getByBatteryId(@PathVariable int id) {
 
         return batteryService.batteryById(id);
     }
 
+    //for GET method
     @GetMapping("/{id}/columns")
     public List<Column> getAllColumnOfId(@PathVariable int id) {
 
