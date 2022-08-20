@@ -8,7 +8,7 @@ In this weeks project I had to create GET/POST/PATCH/DELETE endpoints using the 
 
 You will need the Intellij desktop app (Ultimate version(free 30-day trial)) and start a project with Maven.
 
-For dependencies I had to start my project on the spring IO and add :
+These are the Maven dependencies needed :
   
   -Spring Web
   -Spring Data JPA
