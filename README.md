@@ -25,7 +25,7 @@ While doing the project I also had to download these dependencies :
  
  ## <b> GUIDE </b>
  
- Click on this link to see my PostMan collection --> "<a href=https://documenter.getpostman.com/view/21930815/VUqoRzDT#5c55c1ab-92fb-4b23-85d9-829a09cdb617">
+ Click on this link to see my PostMan collection --> "https://documenter.getpostman.com/view/21930815/VUqoRzDT#5c55c1ab-92fb-4b23-85d9-829a09cdb617"
  Once in, click on the "Run in Postman"(top right corner) and test every endpoint created.
  Run the POST AUTHENTICATE to get the bearer token and in authorization just input the token. I've actually already implemented the token so you can just test them.
  
