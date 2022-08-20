@@ -4,7 +4,7 @@
 
 In this weeks project I had to create GET/POST/PATCH/DELETE endpoints using the Intellij app, Spring boot framework,Java language and Maven dependencies. 
 
-##<b>DEPENDENCIES</b>
+## <b> DEPENDENCIES </b>
 
 You will need the Intellij desktop app (Ultimate version(free 30-day trial)) and start a project with Maven.
 
@@ -23,7 +23,7 @@ While doing the project I also had to download these dependencies :
   
  For the Token Authentication.
  
- ##<b>GUIDE</b>
+ ## <b> GUIDE </b>
  
  Click on this link to see my PostMan collection --> "<a href=https://documenter.getpostman.com/view/21930815/VUqoRzDT#5c55c1ab-92fb-4b23-85d9-829a09cdb617">
  Once in, click on the "Run in Postman"(top right corner) and test every endpoint created.
